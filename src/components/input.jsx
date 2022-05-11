@@ -1,20 +1,29 @@
-import React, { useState } from "react";
-
+import React, { useState,useRef } from "react";
+import "../App.css";
 export default function Input() {
   const [firstInputValue, setFirstInputValue] = useState("");
   const [ShowFirstInputValue, setShowFirstInputValue] = useState(false);
   const [secondInputValue, setSecondInputValue] = useState("");
+  const firstInput = useRef();
+  const setFirstInput = () => {
+    setFirstInputValue(firstInput.current.value)
+  };
   return (
     <div className="App">
       {/* First input */}
       <div className="first">
-        <input
+        {/* <input
           type="text"
           value={firstInputValue}
           onChange={(e) => setFirstInputValue(e.target.value)}
+        /> */}
+        <input
+          type="text"
+          ref={inputElement}
         />
-        <button onClick={() => setShowFirstInputValue(true)}>Show</button>
-        <label>{ShowFirstInputValue ? firstInputValue : ""}</label>
+        {/* <button onClick={() => setShowFirstInputValue(true)}>Show</button> */}
+        <button onClick={setFirstInput}>Show text</button>
+        <label>{firstInputValue}</label>
       </div>
       <hr />
 
