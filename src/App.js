@@ -1,11 +1,17 @@
 
 import React from "react";
-import Input from "./components/input";
+import FirstInput from "./components/firstinput";
+import SecondInput from "./components/secondinput";
+import "./App.css";
 
 function App() {
   
   return (
-    <Input/>
+    <div className="App">
+    <FirstInput/>
+    <SecondInput/>
+
+    </div>
   );
 }
 
