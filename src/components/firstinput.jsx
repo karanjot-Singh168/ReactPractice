@@ -11,6 +11,9 @@ export default function FirstInput() {
     setFirstInputValue(firstInputValue);
     setShowFirstInputValue(false);
   }
+  function countChars(){
+    console.log(firstInputValue.replace(/\s/g, "").length)
+  }
   return (
     <>
       {/* First input */}
@@ -27,6 +30,13 @@ export default function FirstInput() {
         <button onClick={() => setShowFirstInputValue(true)}>Show</button>
         {/* <button onClick={setFirstInput}>Show text</button> */}
         <label>{ShowFirstInputValue ? firstInputValue : ""}</label>
+        <button onClick={() => setFirstInputValue("")}>Reset</button>
+        <button onClick={() => setFirstInputValue(firstInputValue.toUpperCase())}>UpperCase</button>
+        <button onClick={() => setFirstInputValue(firstInputValue.toLowerCase())}>LowerCase</button>
+        <button onClick={() => setFirstInputValue(firstInputValue.replace(/\s/g, ""))}>Remove Whitespace</button>
+        <button onClick={() => countChars()}>Count Characters</button>
+
+
       </div>
       <hr />
     </>
