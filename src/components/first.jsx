@@ -23,6 +23,15 @@ export const First = () => {
             }}
           >
             UseLocation
+            </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <Link
+            to={{
+              pathname: "/second",
+              search: `?value=${inputValue}`,
+            }}
+          >
+            Query String
             </Link>
     </>
   );
