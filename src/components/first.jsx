@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory} from "react-router-dom";
+import { useHistory,Link} from "react-router-dom";
 
 export const First = () => {
   const [inputValue, setInputValue] = useState("");
@@ -16,6 +16,14 @@ export const First = () => {
     <>
       <input type="text" onChange={(e) => setInputValue(e.target.value)} />
       <button onClick={() => navigation()}>LocalStorage</button>&nbsp;&nbsp;
+      <Link
+            to={{
+              pathname: "/second",
+              state: {value:inputValue}
+            }}
+          >
+            UseLocation
+            </Link>
     </>
   );
 };
